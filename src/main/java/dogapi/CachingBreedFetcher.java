@@ -14,7 +14,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * The cache maps the name of a breed to its list of sub breed names.
  */
 public class CachingBreedFetcher implements BreedFetcher {
-    // TODO Task 2: Complete this class
+
     private int callsMade = 0;
     private BreedFetcher breedFetcher;
     private Map<String, List<String>> cache = new HashMap<>();
@@ -25,7 +25,7 @@ public class CachingBreedFetcher implements BreedFetcher {
     }
 
     @Override
-    public List<String> getSubBreeds(String breed) {
+    public List<String> getSubBreeds(String breed) throws BreedNotFoundException {
 
         if (cache.containsKey(breed)) {
             return cache.get(breed);
